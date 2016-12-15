@@ -1,0 +1,27 @@
+<br />
+<div id="Registration form Form">
+	<form #registerForm="ngForm" (ngSubmit)="registerUser(user)">
+        <br />
+		<input class="form-control" placeholder="User Name" name="userName" type="text" [(ngModel)]="user.name" #userName="ngModel"
+			required/> 
+		<span [hidden]="userName.valid || userName.pristine">Name is Required</span>
+		<br/>
+        <input class="form-control" placeholder="User Email" name="userEmail" [(ngModel)]="user.email" #userEmail="ngModel"
+			autocomplete="off" required />
+		<span [hidden]="userEmail.pristine">{{emailMessage}}</span>
+		<br />
+        <input class="form-control" type="date" placeholder="Date of birth" name="userDob" [(ngModel)]="user.dob" #userDob="ngModel"
+			autocomplete="off" required />
+		<span [hidden]="userDob.valid || userDob.pristine">Date of birth is required</span>
+		<br />
+        <input class="form-control" placeholder="Enter Password" name="userPassword" type="password" [(ngModel)]="user.password"
+			#userPassword="ngModel" autocomplete="off" required minlength="6" />
+		<span [hidden]="userPassword.valid || userPassword.pristine">Password is required</span>
+		<br />
+        <div *ngFor="let g of gender">
+            <input type="radio" name="gender" [(ngModel)]="user.gender" [value]="g" />{{g}}
+        </div>
+        <br />
+		<input class="btn btn-primary" type="submit" value="Submit" [disabled]="!registerForm.form.valid" />
+	</form>
+</div>

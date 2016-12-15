@@ -1,0 +1,24 @@
+<div id="Registration form Form">
+	<form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
+		<br />
+		<input class="form-control" placeholder="User Name" name="userName" type="text" formControlName="userName" />
+		<!--{{ registrationForm.get('userName').value }}-->
+		<span [hidden]="registrationForm.get('userName').valid || registrationForm.get('userName').pristine">Name is Required</span>
+		<br/>
+		<input class="form-control" placeholder="User Email" name="userEmail" formControlName="userEmail" />
+		<span *ngIf="registrationForm.get('userEmail').errors">{{ registrationForm.get('userEmail').errors.error }}</span>
+		<br />
+		<input class="form-control" type="date" placeholder="Date of birth" name="userDob" formControlName="userDob" />
+		<span [hidden]="registrationForm.get('userDob').valid || registrationForm.get('userDob').pristine">Date of birth is required</span>
+		<br />
+		<input class="form-control" placeholder="Enter Password" name="userPassword" type="password" formControlName="userPassword"
+		/>
+		<span *ngIf="registrationForm.get('userPassword').errors">{{ registrationForm.get('userPassword').errors.error }}</span>
+		<br />
+		<div *ngFor="let g of genders">
+			<input type="radio" name="userGender" [value]="g" formControlName="userGender" />{{g}}
+		</div>
+		<br />
+		<input class="btn btn-primary" type="submit" value="Submit"  />
+	</form>
+</div>

@@ -12,6 +12,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { DataDrivenFormComponent } from './data-driven-form/data-driven-form.component';
 import { LoginComponent } from './login/login.component';
+/** Guards */
+import { userDetailGuard } from "./user-detail/user-detail.guard";
+import { authGuard } from "./auth.guard";
 
 @NgModule({
     declarations: [
@@ -29,6 +32,10 @@ import { LoginComponent } from './login/login.component';
         // HttpModule,
         userRouting,
         SharedModule
+        ],
+        providers : [
+         userDetailGuard,
+         authGuard
         ]
 })
 export class userModule {}

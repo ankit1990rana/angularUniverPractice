@@ -1,7 +1,7 @@
 exports.ids = [0];
 exports.modules = {
 
-/***/ 421:
+/***/ 424:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,16 +11,16 @@ var core_1 = __webpack_require__(0);
 // import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // import { HttpModule } from '@angular/http';
 var shared_module_1 = __webpack_require__(163);
-var user_component_1 = __webpack_require__(429);
-var user_routes_1 = __webpack_require__(431);
-var user_list_component_1 = __webpack_require__(428);
-var user_detail_component_1 = __webpack_require__(426);
-var create_user_component_1 = __webpack_require__(423);
-var data_driven_form_component_1 = __webpack_require__(424);
-var login_component_1 = __webpack_require__(425);
+var user_component_1 = __webpack_require__(432);
+var user_routes_1 = __webpack_require__(434);
+var user_list_component_1 = __webpack_require__(431);
+var user_detail_component_1 = __webpack_require__(429);
+var create_user_component_1 = __webpack_require__(426);
+var data_driven_form_component_1 = __webpack_require__(427);
+var login_component_1 = __webpack_require__(428);
 /** Guards */
-var user_detail_guard_1 = __webpack_require__(427);
-var auth_guard_1 = __webpack_require__(422);
+var user_detail_guard_1 = __webpack_require__(430);
+var auth_guard_1 = __webpack_require__(425);
 var userModule = (function () {
     function userModule() {
     }
@@ -56,7 +56,7 @@ exports.userModule = userModule;
 
 /***/ },
 
-/***/ 422:
+/***/ 425:
 /***/ function(module, exports) {
 
 "use strict";
@@ -76,14 +76,14 @@ exports.authGuard = authGuard;
 
 /***/ },
 
-/***/ 423:
+/***/ 426:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
 /** Interfaces  */
-var user_interface_1 = __webpack_require__(430);
+var user_interface_1 = __webpack_require__(433);
 var CreateUserComponent = (function () {
     function CreateUserComponent() {
         this.user = new user_interface_1.userInit().user; // Initilize User 
@@ -96,8 +96,8 @@ var CreateUserComponent = (function () {
     CreateUserComponent = __decorate([
         core_1.Component({
             selector: 'app-create-user',
-            template: __webpack_require__(433),
-            styles: [__webpack_require__(432)]
+            template: __webpack_require__(436),
+            styles: [__webpack_require__(435)]
         }), 
         __metadata('design:paramtypes', [])
     ], CreateUserComponent);
@@ -108,7 +108,7 @@ exports.CreateUserComponent = CreateUserComponent;
 
 /***/ },
 
-/***/ 424:
+/***/ 427:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ var core_1 = __webpack_require__(0);
 var forms_1 = __webpack_require__(162);
 var http_1 = __webpack_require__(97);
 __webpack_require__(164);
-__webpack_require__(279);
+__webpack_require__(280);
 var DataDrivenFormComponent = (function () {
     function DataDrivenFormComponent(formBuilder, http) {
         this.formBuilder = formBuilder;
@@ -168,8 +168,8 @@ var DataDrivenFormComponent = (function () {
     DataDrivenFormComponent = __decorate([
         core_1.Component({
             selector: 'app-data-driven-form',
-            template: __webpack_require__(435),
-            styles: [__webpack_require__(434)]
+            template: __webpack_require__(438),
+            styles: [__webpack_require__(437)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _b) || Object])
     ], DataDrivenFormComponent);
@@ -181,16 +181,18 @@ exports.DataDrivenFormComponent = DataDrivenFormComponent;
 
 /***/ },
 
-/***/ 425:
+/***/ 428:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
 var forms_1 = __webpack_require__(162);
+var router_1 = __webpack_require__(96);
 var LoginComponent = (function () {
-    function LoginComponent(formBuilder) {
+    function LoginComponent(formBuilder, router) {
         this.formBuilder = formBuilder;
+        this.router = router;
         this.login = formBuilder.group({
             'userName': ['', forms_1.Validators.required],
             'password': ['', forms_1.Validators.required]
@@ -199,26 +201,27 @@ var LoginComponent = (function () {
     LoginComponent.prototype.loginUser = function (user, isValid) {
         if (isValid && user.userName == "ankit" && user.password == "123") {
             localStorage.setItem("username", user.userName);
+            this.router.navigate(['/user/list']);
         }
     };
     LoginComponent.prototype.ngOnInit = function () { };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'app-login',
-            template: __webpack_require__(437),
-            styles: [__webpack_require__(436)]
+            template: __webpack_require__(440),
+            styles: [__webpack_require__(439)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
     ], LoginComponent);
     return LoginComponent;
-    var _a;
+    var _a, _b;
 }());
 exports.LoginComponent = LoginComponent;
 
 
 /***/ },
 
-/***/ 426:
+/***/ 429:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -239,8 +242,8 @@ var UserDetailComponent = (function () {
     UserDetailComponent = __decorate([
         core_1.Component({
             selector: 'app-user-detail',
-            template: __webpack_require__(439),
-            styles: [__webpack_require__(438)]
+            template: __webpack_require__(442),
+            styles: [__webpack_require__(441)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object])
     ], UserDetailComponent);
@@ -252,7 +255,7 @@ exports.UserDetailComponent = UserDetailComponent;
 
 /***/ },
 
-/***/ 427:
+/***/ 430:
 /***/ function(module, exports) {
 
 "use strict";
@@ -271,7 +274,7 @@ exports.userDetailGuard = userDetailGuard;
 
 /***/ },
 
-/***/ 428:
+/***/ 431:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -285,8 +288,8 @@ var UserListComponent = (function () {
     UserListComponent = __decorate([
         core_1.Component({
             selector: 'app-user-list',
-            template: __webpack_require__(441),
-            styles: [__webpack_require__(440)]
+            template: __webpack_require__(444),
+            styles: [__webpack_require__(443)]
         }), 
         __metadata('design:paramtypes', [])
     ], UserListComponent);
@@ -297,7 +300,7 @@ exports.UserListComponent = UserListComponent;
 
 /***/ },
 
-/***/ 429:
+/***/ 432:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -332,7 +335,7 @@ var UserComponent = (function () {
         core_1.Component({
             selector: 'app-user',
             template: "User Componenet \n            <hr/>\n            <nav>\n  <a [routerLink]=\"['list']\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isLoggedin()\" >List</a>\n  <input type=\"text\" #userID (input)=\"0\" />\n  <a [routerLink]=\"['detail',userID.value]\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isLoggedin()\" > Detail </a>\n  <a [routerLink]=\"['create']\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isNotLoggedin()\" >Register</a>\n  <a [routerLink]=\"['login']\" class=\"enter-btn\" routerLinkActive=\"active\"*ngIf=\"isNotLoggedin()\" >Login </a>\n  <a [routerLink]=\"['dataform']\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isNotLoggedin()\" >Data driven form</a>\n  <a href=\"#\" class=\"enter-btn\"  *ngIf=\"isLoggedin()\" (click)= \"logout()\" >Logout</a>\n</nav>\n        <router-outlet></router-outlet>",
-            styles: [__webpack_require__(442)]
+            styles: [__webpack_require__(445)]
         }), 
         __metadata('design:paramtypes', [])
     ], UserComponent);
@@ -343,7 +346,7 @@ exports.UserComponent = UserComponent;
 
 /***/ },
 
-/***/ 430:
+/***/ 433:
 /***/ function(module, exports) {
 
 "use strict";
@@ -365,27 +368,27 @@ exports.userInit = userInit;
 
 /***/ },
 
-/***/ 431:
+/***/ 434:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var router_1 = __webpack_require__(96);
-var user_component_1 = __webpack_require__(429);
-var user_list_component_1 = __webpack_require__(428);
-var user_detail_component_1 = __webpack_require__(426);
-var create_user_component_1 = __webpack_require__(423);
-var login_component_1 = __webpack_require__(425);
-var data_driven_form_component_1 = __webpack_require__(424);
+var user_component_1 = __webpack_require__(432);
+var user_list_component_1 = __webpack_require__(431);
+var user_detail_component_1 = __webpack_require__(429);
+var create_user_component_1 = __webpack_require__(426);
+var login_component_1 = __webpack_require__(428);
+var data_driven_form_component_1 = __webpack_require__(427);
 /** Guards */
-var user_detail_guard_1 = __webpack_require__(427);
-var auth_guard_1 = __webpack_require__(422);
+var user_detail_guard_1 = __webpack_require__(430);
+var auth_guard_1 = __webpack_require__(425);
 var USER_ROUTES = [
     {
         path: '', component: user_component_1.UserComponent, children: [
             { path: 'list', component: user_list_component_1.UserListComponent },
-            { path: 'dataform', component: data_driven_form_component_1.DataDrivenFormComponent, canActivate: [auth_guard_1.authGuard] },
-            { path: 'create', component: create_user_component_1.CreateUserComponent, canActivate: [auth_guard_1.authGuard] },
+            { path: 'dataform', component: data_driven_form_component_1.DataDrivenFormComponent },
+            { path: 'create', component: create_user_component_1.CreateUserComponent },
             { path: 'login', component: login_component_1.LoginComponent },
             { path: 'detail', component: user_detail_component_1.UserDetailComponent, canActivate: [user_detail_guard_1.userDetailGuard, auth_guard_1.authGuard], canActivateChild: [user_detail_guard_1.userDetailGuard] },
             { path: 'detail/:id', component: user_detail_component_1.UserDetailComponent, canActivate: [user_detail_guard_1.userDetailGuard, auth_guard_1.authGuard] }
@@ -398,77 +401,77 @@ exports.userRouting = router_1.RouterModule.forChild(USER_ROUTES);
 
 /***/ },
 
-/***/ 432:
-/***/ function(module, exports) {
-
-module.exports = ""
-
-/***/ },
-
-/***/ 433:
-/***/ function(module, exports) {
-
-module.exports = "<br />\n<div id=\"Registration form Form\">\n\t<form #registerForm=\"ngForm\" (ngSubmit)=\"registerUser(user)\">\n        <br />\n\t\t<input class=\"form-control\" placeholder=\"User Name\" name=\"userName\" type=\"text\" [(ngModel)]=\"user.name\" #userName=\"ngModel\"\n\t\t\trequired/> \n\t\t<span [hidden]=\"userName.valid || userName.pristine\">Name is Required</span>\n\t\t<br/>\n        <input class=\"form-control\" placeholder=\"User Email\" name=\"userEmail\" [(ngModel)]=\"user.email\" #userEmail=\"ngModel\"\n\t\t\tautocomplete=\"off\" required />\n\t\t<span [hidden]=\"userEmail.pristine\">{{emailMessage}}</span>\n\t\t<br />\n        <input class=\"form-control\" type=\"date\" placeholder=\"Date of birth\" name=\"userDob\" [(ngModel)]=\"user.dob\" #userDob=\"ngModel\"\n\t\t\tautocomplete=\"off\" required />\n\t\t<span [hidden]=\"userDob.valid || userDob.pristine\">Date of birth is required</span>\n\t\t<br />\n        <input class=\"form-control\" placeholder=\"Enter Password\" name=\"userPassword\" type=\"password\" [(ngModel)]=\"user.password\"\n\t\t\t#userPassword=\"ngModel\" autocomplete=\"off\" required minlength=\"6\" />\n\t\t<span [hidden]=\"userPassword.valid || userPassword.pristine\">Password is required</span>\n\t\t<br />\n        <div *ngFor=\"let g of gender\">\n            <input type=\"radio\" name=\"gender\" [(ngModel)]=\"user.gender\" [value]=\"g\" />{{g}}\n        </div>\n        <br />\n\t\t<input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\" [disabled]=\"!registerForm.form.valid\" />\n\t</form>\n</div>"
-
-/***/ },
-
-/***/ 434:
-/***/ function(module, exports) {
-
-module.exports = ""
-
-/***/ },
-
 /***/ 435:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"Registration form Form\">\n\t<form [formGroup]=\"registrationForm\" (ngSubmit)=\"onSubmit(registrationForm)\">\n\t\t<br />\n\t\t<input class=\"form-control\" placeholder=\"User Name\" name=\"userName\" type=\"text\" formControlName=\"userName\" />\n\t\t<!--{{ registrationForm.get('userName').value }}-->\n\t\t<span [hidden]=\"registrationForm.get('userName').valid || registrationForm.get('userName').pristine\">Name is Required</span>\n\t\t<br/>\n\t\t<input class=\"form-control\" placeholder=\"User Email\" name=\"userEmail\" formControlName=\"userEmail\" />\n\t\t<span *ngIf=\"registrationForm.get('userEmail').errors\">{{ registrationForm.get('userEmail').errors.error }}</span>\n\t\t<br />\n\t\t<input class=\"form-control\" type=\"date\" placeholder=\"Date of birth\" name=\"userDob\" formControlName=\"userDob\" />\n\t\t<span [hidden]=\"registrationForm.get('userDob').valid || registrationForm.get('userDob').pristine\">Date of birth is required</span>\n\t\t<br />\n\t\t<input class=\"form-control\" placeholder=\"Enter Password\" name=\"userPassword\" type=\"password\" formControlName=\"userPassword\"\n\t\t/>\n\t\t<span *ngIf=\"registrationForm.get('userPassword').errors\">{{ registrationForm.get('userPassword').errors.error }}</span>\n\t\t<br />\n\t\t<div *ngFor=\"let g of genders\">\n\t\t\t<input type=\"radio\" name=\"userGender\" [value]=\"g\" formControlName=\"userGender\" />{{g}}\n\t\t</div>\n\t\t<br />\n\t\t<input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\"  />\n\t</form>\n</div>"
+module.exports = ""
 
 /***/ },
 
 /***/ 436:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "<br />\n<div id=\"Registration form Form\">\n\t<form #registerForm=\"ngForm\" (ngSubmit)=\"registerUser(user)\">\n        <br />\n\t\t<input class=\"form-control\" placeholder=\"User Name\" name=\"userName\" type=\"text\" [(ngModel)]=\"user.name\" #userName=\"ngModel\"\n\t\t\trequired/> \n\t\t<span [hidden]=\"userName.valid || userName.pristine\">Name is Required</span>\n\t\t<br/>\n        <input class=\"form-control\" placeholder=\"User Email\" name=\"userEmail\" [(ngModel)]=\"user.email\" #userEmail=\"ngModel\"\n\t\t\tautocomplete=\"off\" required />\n\t\t<span [hidden]=\"userEmail.pristine\">{{emailMessage}}</span>\n\t\t<br />\n        <input class=\"form-control\" type=\"date\" placeholder=\"Date of birth\" name=\"userDob\" [(ngModel)]=\"user.dob\" #userDob=\"ngModel\"\n\t\t\tautocomplete=\"off\" required />\n\t\t<span [hidden]=\"userDob.valid || userDob.pristine\">Date of birth is required</span>\n\t\t<br />\n        <input class=\"form-control\" placeholder=\"Enter Password\" name=\"userPassword\" type=\"password\" [(ngModel)]=\"user.password\"\n\t\t\t#userPassword=\"ngModel\" autocomplete=\"off\" required minlength=\"6\" />\n\t\t<span [hidden]=\"userPassword.valid || userPassword.pristine\">Password is required</span>\n\t\t<br />\n        <div *ngFor=\"let g of gender\">\n            <input type=\"radio\" name=\"gender\" [(ngModel)]=\"user.gender\" [value]=\"g\" />{{g}}\n        </div>\n        <br />\n\t\t<input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\" [disabled]=\"!registerForm.form.valid\" />\n\t</form>\n</div>"
 
 /***/ },
 
 /***/ 437:
 /***/ function(module, exports) {
 
-module.exports = "<div>\n  <form [formGroup]=\"login\" (ngSubmit)=\"loginUser(login.value, login.valid)\">\n    <br />\n    User Name <input type=\"text\" name=\"userName\" formControlName=\"userName\" />\n    <br />\n    Password <input type=\"password\" name=\"password\" formControlName=\"password\" />\n    <br />\n    <input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\"  />\n  </form>\n</div>"
+module.exports = ""
 
 /***/ },
 
 /***/ 438:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "<div id=\"Registration form Form\">\n\t<form [formGroup]=\"registrationForm\" (ngSubmit)=\"onSubmit(registrationForm)\">\n\t\t<br />\n\t\t<input class=\"form-control\" placeholder=\"User Name\" name=\"userName\" type=\"text\" formControlName=\"userName\" />\n\t\t<!--{{ registrationForm.get('userName').value }}-->\n\t\t<span [hidden]=\"registrationForm.get('userName').valid || registrationForm.get('userName').pristine\">Name is Required</span>\n\t\t<br/>\n\t\t<input class=\"form-control\" placeholder=\"User Email\" name=\"userEmail\" formControlName=\"userEmail\" />\n\t\t<span *ngIf=\"registrationForm.get('userEmail').errors\">{{ registrationForm.get('userEmail').errors.error }}</span>\n\t\t<br />\n\t\t<input class=\"form-control\" type=\"date\" placeholder=\"Date of birth\" name=\"userDob\" formControlName=\"userDob\" />\n\t\t<span [hidden]=\"registrationForm.get('userDob').valid || registrationForm.get('userDob').pristine\">Date of birth is required</span>\n\t\t<br />\n\t\t<input class=\"form-control\" placeholder=\"Enter Password\" name=\"userPassword\" type=\"password\" formControlName=\"userPassword\"\n\t\t/>\n\t\t<span *ngIf=\"registrationForm.get('userPassword').errors\">{{ registrationForm.get('userPassword').errors.error }}</span>\n\t\t<br />\n\t\t<div *ngFor=\"let g of genders\">\n\t\t\t<input type=\"radio\" name=\"userGender\" [value]=\"g\" formControlName=\"userGender\" />{{g}}\n\t\t</div>\n\t\t<br />\n\t\t<input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\"  />\n\t</form>\n</div>"
 
 /***/ },
 
 /***/ 439:
 /***/ function(module, exports) {
 
-module.exports = "Here are user details\n"
+module.exports = ""
 
 /***/ },
 
 /***/ 440:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "<div>\n  <form [formGroup]=\"login\" (ngSubmit)=\"loginUser(login.value, login.valid)\">\n    <br />\n    User Name <input type=\"text\" name=\"userName\" formControlName=\"userName\" />\n    <br />\n    Password <input type=\"password\" name=\"password\" formControlName=\"password\" />\n    <br />\n    <input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\"  />\n  </form>\n</div>"
 
 /***/ },
 
 /***/ 441:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  user-list works!\n</p>\n"
+module.exports = ""
 
 /***/ },
 
 /***/ 442:
+/***/ function(module, exports) {
+
+module.exports = "Here are user details\n"
+
+/***/ },
+
+/***/ 443:
+/***/ function(module, exports) {
+
+module.exports = ""
+
+/***/ },
+
+/***/ 444:
+/***/ function(module, exports) {
+
+module.exports = "<p>\n  user-list works!\n</p>\n"
+
+/***/ },
+
+/***/ 445:
 /***/ function(module, exports) {
 
 module.exports = ""

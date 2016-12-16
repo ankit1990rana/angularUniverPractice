@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MapsComponent } from './+maps/maps.component';
 import { HomeComponent } from './+home/home.component';
+import { AnimationComponent } from './+animation/animation.component';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -13,7 +14,8 @@ import { routing } from './app-routing.module';
   declarations: [ 
     AppComponent,
     MapsComponent,
-    HomeComponent
+    HomeComponent,
+    AnimationComponent
      ],
   imports: [
     SharedModule,

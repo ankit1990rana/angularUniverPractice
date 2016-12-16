@@ -59085,7 +59085,7 @@ module.exports = ""
 /* 420 */
 /***/ function(module, exports) {
 
-module.exports = "<sebm-google-map [latitude]=\"lat\" [longitude]=\"lng\"></sebm-google-map>\n\nworks"
+module.exports = "<sebm-google-map [latitude]=\"lat\" [longitude]=\"lng\"></sebm-google-map>\n\nDoes not work"
 
 /***/ },
 /* 421 */

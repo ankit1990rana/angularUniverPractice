@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,  FormControl, Validators} from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup,  FormControl, Validators} from "@angular/forms"
 export class LoginComponent implements OnInit {
 
   private login:FormGroup;
-  constructor( public formBuilder: FormBuilder ) {
+  constructor( public formBuilder: FormBuilder, public router:Router ) {
       this.login = formBuilder.group({
         'userName' : ['', Validators.required],
         'password' : ['', Validators.required]
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   loginUser(user, isValid){
     if(isValid && user.userName == "ankit" && user.password == "123" ){
       localStorage.setItem("username", user.userName );
+      this.router.navigate(['/user/list']);
     }
   }
   

@@ -187,9 +187,11 @@ exports.DataDrivenFormComponent = DataDrivenFormComponent;
 "use strict";
 var core_1 = __webpack_require__(0);
 var forms_1 = __webpack_require__(167);
+var router_1 = __webpack_require__(98);
 var LoginComponent = (function () {
-    function LoginComponent(formBuilder) {
+    function LoginComponent(formBuilder, router) {
         this.formBuilder = formBuilder;
+        this.router = router;
         this.login = formBuilder.group({
             'userName': ['', forms_1.Validators.required],
             'password': ['', forms_1.Validators.required]
@@ -198,6 +200,7 @@ var LoginComponent = (function () {
     LoginComponent.prototype.loginUser = function (user, isValid) {
         if (isValid && user.userName == "ankit" && user.password == "123") {
             localStorage.setItem("username", user.userName);
+            this.router.navigate(['/user/list']);
         }
     };
     LoginComponent.prototype.ngOnInit = function () { };
@@ -207,10 +210,10 @@ var LoginComponent = (function () {
             template: __webpack_require__(457),
             styles: [__webpack_require__(456)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
     ], LoginComponent);
     return LoginComponent;
-    var _a;
+    var _a, _b;
 }());
 exports.LoginComponent = LoginComponent;
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-maps',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  constructor() { }
+   private lat: number
+   private lng: number;
 
-  ngOnInit() {
+  constructor() { 
+    this.lat = 51.678418;
+    this.lng = 7.809007;
   }
+
+  ngOnInit() { }
 
 }

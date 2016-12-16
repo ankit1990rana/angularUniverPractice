@@ -1,7 +1,7 @@
 exports.ids = [0];
 exports.modules = {
 
-/***/ 424:
+/***/ 445:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10,17 +10,17 @@ var core_1 = __webpack_require__(0);
 // import { CommonModule } from "@angular/common";
 // import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // import { HttpModule } from '@angular/http';
-var shared_module_1 = __webpack_require__(163);
-var user_component_1 = __webpack_require__(432);
-var user_routes_1 = __webpack_require__(434);
-var user_list_component_1 = __webpack_require__(431);
-var user_detail_component_1 = __webpack_require__(429);
-var create_user_component_1 = __webpack_require__(426);
-var data_driven_form_component_1 = __webpack_require__(427);
-var login_component_1 = __webpack_require__(428);
+var shared_module_1 = __webpack_require__(173);
+var user_component_1 = __webpack_require__(453);
+var user_routes_1 = __webpack_require__(455);
+var user_list_component_1 = __webpack_require__(452);
+var user_detail_component_1 = __webpack_require__(450);
+var create_user_component_1 = __webpack_require__(447);
+var data_driven_form_component_1 = __webpack_require__(448);
+var login_component_1 = __webpack_require__(449);
 /** Guards */
-var user_detail_guard_1 = __webpack_require__(430);
-var auth_guard_1 = __webpack_require__(425);
+var user_detail_guard_1 = __webpack_require__(451);
+var auth_guard_1 = __webpack_require__(446);
 var userModule = (function () {
     function userModule() {
     }
@@ -56,7 +56,7 @@ exports.userModule = userModule;
 
 /***/ },
 
-/***/ 425:
+/***/ 446:
 /***/ function(module, exports) {
 
 "use strict";
@@ -76,14 +76,14 @@ exports.authGuard = authGuard;
 
 /***/ },
 
-/***/ 426:
+/***/ 447:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
 /** Interfaces  */
-var user_interface_1 = __webpack_require__(433);
+var user_interface_1 = __webpack_require__(454);
 var CreateUserComponent = (function () {
     function CreateUserComponent() {
         this.user = new user_interface_1.userInit().user; // Initilize User 
@@ -96,8 +96,8 @@ var CreateUserComponent = (function () {
     CreateUserComponent = __decorate([
         core_1.Component({
             selector: 'app-create-user',
-            template: __webpack_require__(436),
-            styles: [__webpack_require__(435)]
+            template: __webpack_require__(457),
+            styles: [__webpack_require__(456)]
         }), 
         __metadata('design:paramtypes', [])
     ], CreateUserComponent);
@@ -108,16 +108,16 @@ exports.CreateUserComponent = CreateUserComponent;
 
 /***/ },
 
-/***/ 427:
+/***/ 448:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(162);
-var http_1 = __webpack_require__(97);
-__webpack_require__(164);
-__webpack_require__(280);
+var forms_1 = __webpack_require__(172);
+var http_1 = __webpack_require__(100);
+__webpack_require__(174);
+__webpack_require__(296);
 var DataDrivenFormComponent = (function () {
     function DataDrivenFormComponent(formBuilder, http) {
         this.formBuilder = formBuilder;
@@ -168,8 +168,8 @@ var DataDrivenFormComponent = (function () {
     DataDrivenFormComponent = __decorate([
         core_1.Component({
             selector: 'app-data-driven-form',
-            template: __webpack_require__(438),
-            styles: [__webpack_require__(437)]
+            template: __webpack_require__(459),
+            styles: [__webpack_require__(458)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _b) || Object])
     ], DataDrivenFormComponent);
@@ -181,14 +181,14 @@ exports.DataDrivenFormComponent = DataDrivenFormComponent;
 
 /***/ },
 
-/***/ 428:
+/***/ 449:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(162);
-var router_1 = __webpack_require__(96);
+var forms_1 = __webpack_require__(172);
+var router_1 = __webpack_require__(99);
 var LoginComponent = (function () {
     function LoginComponent(formBuilder, router) {
         this.formBuilder = formBuilder;
@@ -208,8 +208,8 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'app-login',
-            template: __webpack_require__(440),
-            styles: [__webpack_require__(439)]
+            template: __webpack_require__(461),
+            styles: [__webpack_require__(460)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object, (typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object])
     ], LoginComponent);
@@ -221,13 +221,13 @@ exports.LoginComponent = LoginComponent;
 
 /***/ },
 
-/***/ 429:
+/***/ 450:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(96);
+var router_1 = __webpack_require__(99);
 var UserDetailComponent = (function () {
     function UserDetailComponent(activatedRoute) {
         var _this = this;
@@ -242,8 +242,8 @@ var UserDetailComponent = (function () {
     UserDetailComponent = __decorate([
         core_1.Component({
             selector: 'app-user-detail',
-            template: __webpack_require__(442),
-            styles: [__webpack_require__(441)]
+            template: __webpack_require__(463),
+            styles: [__webpack_require__(462)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _a) || Object])
     ], UserDetailComponent);
@@ -255,7 +255,7 @@ exports.UserDetailComponent = UserDetailComponent;
 
 /***/ },
 
-/***/ 430:
+/***/ 451:
 /***/ function(module, exports) {
 
 "use strict";
@@ -274,7 +274,7 @@ exports.userDetailGuard = userDetailGuard;
 
 /***/ },
 
-/***/ 431:
+/***/ 452:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -288,8 +288,8 @@ var UserListComponent = (function () {
     UserListComponent = __decorate([
         core_1.Component({
             selector: 'app-user-list',
-            template: __webpack_require__(444),
-            styles: [__webpack_require__(443)]
+            template: __webpack_require__(465),
+            styles: [__webpack_require__(464)]
         }), 
         __metadata('design:paramtypes', [])
     ], UserListComponent);
@@ -300,7 +300,7 @@ exports.UserListComponent = UserListComponent;
 
 /***/ },
 
-/***/ 432:
+/***/ 453:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -335,7 +335,7 @@ var UserComponent = (function () {
         core_1.Component({
             selector: 'app-user',
             template: "User Componenet \n            <hr/>\n            <nav>\n  <a [routerLink]=\"['list']\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isLoggedin()\" >List</a>\n  <input type=\"text\" #userID (input)=\"0\" />\n  <a [routerLink]=\"['detail',userID.value]\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isLoggedin()\" > Detail </a>\n  <a [routerLink]=\"['create']\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isNotLoggedin()\" >Register</a>\n  <a [routerLink]=\"['login']\" class=\"enter-btn\" routerLinkActive=\"active\"*ngIf=\"isNotLoggedin()\" >Login </a>\n  <a [routerLink]=\"['dataform']\" class=\"enter-btn\" routerLinkActive=\"active\" *ngIf=\"isNotLoggedin()\" >Data driven form</a>\n  <a href=\"#\" class=\"enter-btn\"  *ngIf=\"isLoggedin()\" (click)= \"logout()\" >Logout</a>\n</nav>\n        <router-outlet></router-outlet>",
-            styles: [__webpack_require__(445)]
+            styles: [__webpack_require__(466)]
         }), 
         __metadata('design:paramtypes', [])
     ], UserComponent);
@@ -346,7 +346,7 @@ exports.UserComponent = UserComponent;
 
 /***/ },
 
-/***/ 433:
+/***/ 454:
 /***/ function(module, exports) {
 
 "use strict";
@@ -368,21 +368,21 @@ exports.userInit = userInit;
 
 /***/ },
 
-/***/ 434:
+/***/ 455:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var router_1 = __webpack_require__(96);
-var user_component_1 = __webpack_require__(432);
-var user_list_component_1 = __webpack_require__(431);
-var user_detail_component_1 = __webpack_require__(429);
-var create_user_component_1 = __webpack_require__(426);
-var login_component_1 = __webpack_require__(428);
-var data_driven_form_component_1 = __webpack_require__(427);
+var router_1 = __webpack_require__(99);
+var user_component_1 = __webpack_require__(453);
+var user_list_component_1 = __webpack_require__(452);
+var user_detail_component_1 = __webpack_require__(450);
+var create_user_component_1 = __webpack_require__(447);
+var login_component_1 = __webpack_require__(449);
+var data_driven_form_component_1 = __webpack_require__(448);
 /** Guards */
-var user_detail_guard_1 = __webpack_require__(430);
-var auth_guard_1 = __webpack_require__(425);
+var user_detail_guard_1 = __webpack_require__(451);
+var auth_guard_1 = __webpack_require__(446);
 var USER_ROUTES = [
     {
         path: '', component: user_component_1.UserComponent, children: [
@@ -401,77 +401,77 @@ exports.userRouting = router_1.RouterModule.forChild(USER_ROUTES);
 
 /***/ },
 
-/***/ 435:
+/***/ 456:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 436:
+/***/ 457:
 /***/ function(module, exports) {
 
 module.exports = "<br />\n<div id=\"Registration form Form\">\n\t<form #registerForm=\"ngForm\" (ngSubmit)=\"registerUser(user)\">\n        <br />\n\t\t<input class=\"form-control\" placeholder=\"User Name\" name=\"userName\" type=\"text\" [(ngModel)]=\"user.name\" #userName=\"ngModel\"\n\t\t\trequired/> \n\t\t<span [hidden]=\"userName.valid || userName.pristine\">Name is Required</span>\n\t\t<br/>\n        <input class=\"form-control\" placeholder=\"User Email\" name=\"userEmail\" [(ngModel)]=\"user.email\" #userEmail=\"ngModel\"\n\t\t\tautocomplete=\"off\" required />\n\t\t<span [hidden]=\"userEmail.pristine\">{{emailMessage}}</span>\n\t\t<br />\n        <input class=\"form-control\" type=\"date\" placeholder=\"Date of birth\" name=\"userDob\" [(ngModel)]=\"user.dob\" #userDob=\"ngModel\"\n\t\t\tautocomplete=\"off\" required />\n\t\t<span [hidden]=\"userDob.valid || userDob.pristine\">Date of birth is required</span>\n\t\t<br />\n        <input class=\"form-control\" placeholder=\"Enter Password\" name=\"userPassword\" type=\"password\" [(ngModel)]=\"user.password\"\n\t\t\t#userPassword=\"ngModel\" autocomplete=\"off\" required minlength=\"6\" />\n\t\t<span [hidden]=\"userPassword.valid || userPassword.pristine\">Password is required</span>\n\t\t<br />\n        <div *ngFor=\"let g of gender\">\n            <input type=\"radio\" name=\"gender\" [(ngModel)]=\"user.gender\" [value]=\"g\" />{{g}}\n        </div>\n        <br />\n\t\t<input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\" [disabled]=\"!registerForm.form.valid\" />\n\t</form>\n</div>"
 
 /***/ },
 
-/***/ 437:
+/***/ 458:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 438:
+/***/ 459:
 /***/ function(module, exports) {
 
 module.exports = "<div id=\"Registration form Form\">\n\t<form [formGroup]=\"registrationForm\" (ngSubmit)=\"onSubmit(registrationForm)\">\n\t\t<br />\n\t\t<input class=\"form-control\" placeholder=\"User Name\" name=\"userName\" type=\"text\" formControlName=\"userName\" />\n\t\t<!--{{ registrationForm.get('userName').value }}-->\n\t\t<span [hidden]=\"registrationForm.get('userName').valid || registrationForm.get('userName').pristine\">Name is Required</span>\n\t\t<br/>\n\t\t<input class=\"form-control\" placeholder=\"User Email\" name=\"userEmail\" formControlName=\"userEmail\" />\n\t\t<span *ngIf=\"registrationForm.get('userEmail').errors\">{{ registrationForm.get('userEmail').errors.error }}</span>\n\t\t<br />\n\t\t<input class=\"form-control\" type=\"date\" placeholder=\"Date of birth\" name=\"userDob\" formControlName=\"userDob\" />\n\t\t<span [hidden]=\"registrationForm.get('userDob').valid || registrationForm.get('userDob').pristine\">Date of birth is required</span>\n\t\t<br />\n\t\t<input class=\"form-control\" placeholder=\"Enter Password\" name=\"userPassword\" type=\"password\" formControlName=\"userPassword\"\n\t\t/>\n\t\t<span *ngIf=\"registrationForm.get('userPassword').errors\">{{ registrationForm.get('userPassword').errors.error }}</span>\n\t\t<br />\n\t\t<div *ngFor=\"let g of genders\">\n\t\t\t<input type=\"radio\" name=\"userGender\" [value]=\"g\" formControlName=\"userGender\" />{{g}}\n\t\t</div>\n\t\t<br />\n\t\t<input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\"  />\n\t</form>\n</div>"
 
 /***/ },
 
-/***/ 439:
+/***/ 460:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 440:
+/***/ 461:
 /***/ function(module, exports) {
 
 module.exports = "<div>\n  <form [formGroup]=\"login\" (ngSubmit)=\"loginUser(login.value, login.valid)\">\n    <br />\n    User Name <input type=\"text\" name=\"userName\" formControlName=\"userName\" />\n    <br />\n    Password <input type=\"password\" name=\"password\" formControlName=\"password\" />\n    <br />\n    <input class=\"btn btn-primary\" type=\"submit\" value=\"Submit\"  />\n  </form>\n</div>"
 
 /***/ },
 
-/***/ 441:
+/***/ 462:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 442:
+/***/ 463:
 /***/ function(module, exports) {
 
 module.exports = "Here are user details\n"
 
 /***/ },
 
-/***/ 443:
+/***/ 464:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 444:
+/***/ 465:
 /***/ function(module, exports) {
 
 module.exports = "<p>\n  user-list works!\n</p>\n"
 
 /***/ },
 
-/***/ 445:
+/***/ 466:
 /***/ function(module, exports) {
 
 module.exports = ""
